@@ -13,4 +13,8 @@ player.on('timeupdate', () => {
   );
 });
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+const savedTime = localStorage.getItem('videoplayer-current-time');
+
+if (savedTime) {
+  player.setCurrentTime(savedTime);
+}
